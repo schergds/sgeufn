@@ -26,7 +26,7 @@ class EventoAtivoComDataAbertaManager(models.Manager):
 
 
 class Evento(models.Model):       
-    nome = models.CharField('Nome do evento *', db_index=True, max_length=150, help_text='* Campo obrigatório')
+    nome = models.CharField('Nome do evento *', db_index=True, max_length=350, help_text='* Campo obrigatório')
     descricao = models.TextField('Descrição do evento', null=True, blank=True, max_length=500 ,help_text='Coloque aqui uma descrição do evento para ajudar os autores a submeterem seus trabalhos')
     tipo = models.ForeignKey('tipo_evento.TipoEvento', verbose_name= 'Tipo do evento *', on_delete=models.PROTECT, related_name='tipo_evento')
     ministrantes = models.ManyToManyField('usuario.Usuario', verbose_name='Ministrante(s)', help_text='Para selecionar mais de um ministrante, pressione CTRL e selecione com o mouse', related_name='ministrantes',  null=True, blank=True)
