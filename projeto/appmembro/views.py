@@ -250,7 +250,7 @@ class InscricaoPdfView(LoginRequiredMixin, MembroRequiredMixin, DetailView):
     caminho_imagem = finders.find('core/img/logoUFN_hor.jpg')
     caminho_imagem_lap = finders.find('core/img/logo_lapinf_hor.png')
 
-    imagem = Image(caminho_imagem, width=220,height=100)
+    imagem = Image(caminho_imagem, width=200,height=80)
     imagem_lap = Image(caminho_imagem_lap, width=220,height=75)
     story = []
 
